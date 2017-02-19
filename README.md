@@ -1,3 +1,3 @@
 Moving car - CSS Animation
 
-[DEMO](https://g-akshay.github.io/Moving-Car/index.html)
+[DEMO](https://g-akshay.github.io/Moving-Car)
