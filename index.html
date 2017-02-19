@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Apps</title>
-     <link href="css/bootstrap.css" rel="stylesheet">
-     <link href="css/about.css" rel="stylesheet">
-  </head>
-  <body>
+    <title>Moving car</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/about.css" rel="stylesheet">
+</head>
+
+<body>
 
     <div id="clouds">
-    	<div class="cloud x1"></div>
-    	<!-- Time for multiple clouds to dance around -->
-    	<div class="cloud x2"></div>
-    	<div class="cloud x3"></div>
-    	<div class="cloud x4"></div>
-    	<div class="cloud x5"></div>
+        <div class="cloud x1"></div>
+        <!-- Time for multiple clouds to dance around -->
+        <div class="cloud x2"></div>
+        <div class="cloud x3"></div>
+        <div class="cloud x4"></div>
+        <div class="cloud x5"></div>
     </div>
 
     <div class="mountain"></div>
@@ -27,31 +29,31 @@
 
     <div class="stand"></div>
     <div class="info-con">
-      <div class="col-sm-3 col-xs-12 img-con">
-        <div class="pic">
-          <img class="img-responsive col-sm-12 col-xs-8" src="images/profile.jpg">
+        <div class="col-sm-3 col-xs-12 img-con">
+            <div class="pic">
+                <img class="img-responsive col-sm-12 col-xs-8" src="images/profile.jpg">
+            </div>
         </div>
-      </div>
-      <div class="col-sm-9 col-xs-12 info">
+        <div class="col-sm-9 col-xs-12 info">
 
-      </div>
+        </div>
     </div>
 
-<script src="js/jquery-1.11.1.min.js"></script>
-<!--<script src="js/snowStorm-1.4.js"></script>-->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!--<script src="js/snowStorm-1.4.js"></script>-->
 
-<script>
+    <script>
+    var txt = 'With experience in web, graphic, interior and exterior design, I maintain a healthy balance between functionality and visual impact in all my work. I believe every piece of design can be a work of art.<br>I love my work and enjoy each new project as I get it. Feel free to have a look at my portfolio and don\'t hesitate to contact me if you think I can be of service to you.<br>Thanks for stopping by!'.split('');
 
-  var txt='With experience in web, graphic, interior and exterior design, I maintain a healthy balance between functionality and visual impact in all my work. I believe every piece of design can be a work of art.<br>I love my work and enjoy each new project as I get it. Feel free to have a look at my portfolio and don\'t hesitate to contact me if you think I can be of service to you.<br>Thanks for stopping by!'.split('');
+    var delay = 50;
+    for (i = 0; i < txt.length; i++) {
+        setTimeout(function() {
+            $('.info').append(txt.shift())
+        }, delay * i)
 
-  var delay=50;
-  for ( i=0; i<txt.length;i++){
-      setTimeout(function(){
-          $('.info').append(txt.shift() )
-      }, delay * i)
+    }
+    </script>
 
-}
-</script>
+</body>
 
-  </body>
 </html>
