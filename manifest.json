@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+
+    "name": "My Apps",
+    "version": "1.0",
+    "description": "Description about my apps on Play Store.",
+
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+
+    "browser_action":   {
+        "default_icon": "icon.png"
+    },
+
+    "background": {
+        "scripts": ["js/background.js"]
+    },
+
+    "options_page": "options.html"
+}

@@ -1,0 +1,286 @@
+body {
+	/*To hide the horizontal scroller appearing during the animation*/
+	overflow: hidden;
+	background: #100D01;
+}
+
+#clouds{
+	padding: 100px 0 0px 0;
+	background: #c9dbe9;
+	background: -webkit-linear-gradient(top, #5F6162 0%, #fff 100%);
+	/*background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);*/
+}
+
+/*Time to finalise the cloud shape*/
+.cloud {
+	width: 200px; height: 60px;
+	background: #f2f2f2;
+	border-radius: 200px;
+	-webkit-border-radius: 200px;
+	position: relative;
+}
+
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute;
+	background: #f2f2f2;
+	width: 100px;
+	height: 80px;
+	top: -15px;
+	left: 10px;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 120px; height: 120px;
+	top: -55px; left: auto; right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+	-webkit-animation: moveclouds 15s linear infinite;
+	z-index: 101;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+	left: 200px;
+	-webkit-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.6; /*opacity proportional to the size*/
+
+	/*Speed will also be proportional to the size and opacity*/
+	/*More the speed. Less the time in 's' = seconds*/
+	-webkit-animation: moveclouds 25s linear infinite;
+	z-index: 101;
+}
+
+.x3 {
+	left: -250px; top: -200px;
+
+	-webkit-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+
+	-webkit-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+	left: 470px; top: -250px;
+
+	-webkit-transform: scale(0.75);
+	transform: scale(0.75);
+	opacity: 0.75; /*opacity proportional to the size*/
+
+	-webkit-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+	left: -150px; top: -150px;
+
+	-webkit-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+
+	-webkit-animation: moveclouds 20s linear infinite;
+	z-index: 101;
+}
+
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+
+/* ----- MOUNTAIN START ----- */
+.mountain{
+  background: url("../images/mountain.png");
+  position: absolute;
+  top: 109px;
+  height: 600px;
+  width: 1700%;
+  z-index:100;
+}
+
+/* ----- MOUNTAIN END ----- */
+
+/* ----- GROUND START ----- */
+
+.ground-1{
+  background:url('../images/ground.png');
+  background-repeat: repeat-x;
+  position:absolute;
+  top: 220px;
+  height: 405px;
+  width: 700%;
+  z-index:102;
+}
+
+.ground-2{
+  background:url('../images/ground2.png');
+  background-repeat: repeat-x;
+  position:absolute;
+  top: 470px;
+  min-height: 235px;
+  width: 700%;
+  z-index: 105;
+}
+
+.ground-extended{
+  background:url('../images/ground1.png');
+  position:absolute;
+  top: 230px;
+  height: 500px;
+  width: 100%;
+  z-index:102;
+}
+
+.road{
+  /*background: -webkit-linear-gradient(top, #2D3335 0%, #9B9292 100%);*/
+  background: url('../images/road.jpg');
+  position: absolute;
+  top: 455px;
+  height: 170px;
+  width: 700%;
+  z-index:103;
+}
+/* ----- GROUND END ----- */
+
+/* ----- CAR START ----- */
+
+.car{
+  background:url('../images/car.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top: 430px;
+  left: 60px;
+  z-index:106;
+  -webkit-transition: 2s ease-in-out;
+}
+
+/*.car:hover
+{
+  -webkit-transform: translate(600px,0px);
+}*/
+/* ----- CAR END ----- */
+
+/* ----- MOVE ------ */
+@-webkit-keyframes moveground {
+	0% {margin-left: 0px;}
+	100% {margin-left: -3000px;}
+}
+
+@-webkit-keyframes movemountain {
+	0% {margin-left: 0px;}
+	100% {margin-left: -500px;}
+}
+
+.ground-1{
+  /*background-position: 0px 100%;*/
+  -webkit-animation: moveground 15s linear infinite;
+}
+
+.ground-2{
+  background-position: 466px 100%;
+  -webkit-animation: moveground 15s linear infinite;
+}
+
+.mountain{
+  background-position: 466px 100%;
+  -webkit-animation: movemountain 15s linear infinite;
+}
+
+.road{
+  background-position: 466px 100%;
+  -webkit-animation: moveground 15s linear infinite;
+}
+
+/* car shake */
+/*@-webkit-keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }*/
+	/*60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }*/
+	/*80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake {
+	display:block;
+	-webkit-animation-name: spaceboots;
+	-webkit-animation-duration: 2s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}*/
+
+@-webkit-keyframes swing{
+    0%{-webkit-transform:rotate(-3deg)}
+    50%{-webkit-transform:rotate(3deg)}
+    100%{-webkit-transform:rotate(-3deg)}
+}
+
+.info-con{
+  background-color: #323232;
+  position: absolute;
+  top: 0;
+  opacity: 0.85;
+  left: 0;
+  margin: 30px auto;
+  right: 0;
+  width: 80%;
+  height: 260px;
+  z-index: 110;
+
+  -webkit-animation:swing 3s infinite ease-in-out;
+  -webkit-transform-origin:top;
+}
+
+.img-con{
+  height: 200px;
+}
+
+.pic{
+/*  border: 11px solid white;*/
+  margin: 2px 31px 0px -32px;
+  -webkit-transform: rotate(-13deg);
+}
+.img-con img{
+  border: 11px solid white;
+  height: 200px;
+  width: 220px;
+  padding:0 0;
+}
+
+.info{
+  height: 100%;
+  color:#ffffff;
+  padding-top: 25px;
+  text-align: justify;
+}
+
+.stand{
+  height: 57px;
+  position: absolute;
+  width: 71%;
+  left: 0;
+  z-index: 100;
+  border: 0px;
+  top: -26px;
+  right: 0;
+  margin: 0 auto;
+  border-left: 16px solid rgb(31, 17, 5);
+  border-right: 16px solid rgb(31, 17, 5);
+
+  -webkit-animation:swing 3s infinite ease-in-out;
+  -webkit-transform-origin:top;
+}
